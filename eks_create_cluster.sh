@@ -1,0 +1,1 @@
+eksctl create cluster --name non-prod-cluster --version 1.18 --region us-east-2 --nodegroup-name non-prod-eks-worker-nodes --node-type t2.medium --nodes 2 --nodes-min 2 --nodes-max 2 --node-volume-size 10 --ssh-access --ssh-public-key ~/selva_new.pem --managed
