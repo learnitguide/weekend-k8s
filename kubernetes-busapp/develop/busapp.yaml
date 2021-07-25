@@ -16,29 +16,11 @@ spec:
         app: bus
         tier: frontend
     spec:
-      nodeSelector:
-              kubernetes.io/hostname: ip-192-168-55-192.us-east-2.compute.internal
-      volumes:
-       - name: bus-selva
-         persistentVolumeClaim:
-                 claimName: busapp-vol1-pvc
-
       containers:
         - name: busapp
           image: learnitguide/busapp:1.0
           ports:
             - containerPort: 8001
-          resources:
-           requests:
-                   #cpu: 5Mi
-            memory: 500Mi
-
-           limits:
-                   #cpu: 10Mi
-            memory: 750Mi
-          volumeMounts:
-                  - name: bus-selva
-                    mountPath: /tmp/selva/vol
 
 
 ---
